@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="My Dual Listbox" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <lightning-dual-listbox
+                label="Select Your Languages"
+                source-label="Available Languages"
+                selected-label="Selected Languages"
+                field-level-help="This is a dual listbox"
+                options={options}
+                value={values}
+                onchange={handleChange}>
+            </lightning-dual-listbox>
+        </div>
+    </lightning-card>
+</template>

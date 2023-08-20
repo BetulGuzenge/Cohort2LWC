@@ -1,0 +1,85 @@
+<template>
+    <lightning-card title="Create Account" icon-name="utility:new">
+        <div class="slds-p-horizontal_small">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="4" padding="around-small">
+                    <lightning-input 
+                        type="text" 
+                        variant="standard" 
+                        label="Account Name" 
+                        required="true"
+                        value={accountName}
+                        onchange={handleAccountNameChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="4" padding="around-small">
+                    <lightning-combobox
+                        label="Choose Type"
+                        value={typeValue}
+                        options={typeOptions}
+                        onchange={handleTypeChange}
+                        required="true">
+                    </lightning-combobox>                    
+                </lightning-layout-item>
+                <lightning-layout-item size="4" padding="around-small">
+                    <lightning-input 
+                        type="number" 
+                        variant="standard" 
+                        label="Annual Revenue" 
+                        required="true"
+                        value={annualRevenue}
+                        onchange={handleAnnualRevenueChange}
+                        formatter="currency">
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="4" padding="around-small">
+                    <lightning-input 
+                        type="date" 
+                        variant="standard"
+                        label="SLA Expiry Date"
+                        required="true"
+                        value={expiryDate}
+                        onchange={handleExpiryDateChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="4" padding="around-small">
+                    <lightning-input 
+                        type="tel" 
+                        variant="standard"
+                        label="Phone Number" 
+                        required="true"
+                        value={phoneNumber}
+                        onchange={handlePhoneNumberChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="4" padding="around-small">
+                    <lightning-combobox
+                        label="Is Active"
+                        value={activeValue}
+                        options={activeOptions}
+                        onchange={handleActiveChange}
+                        required="true">
+                    </lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <template if:true={contactRecords} for:each={contactRecords} for:item="contact">
+                       <div key={contact.id}>
+                            <c-contact-create-form
+                                data-id={contact.id}
+                                onsaved={handleContactSaved}
+                                onreset={handleContactReset}>
+                            </c-contact-create-form>
+                       </div>
+                    </template>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <lightning-button variant="base" label="Add Contact" onclick={handleAddContactClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <lightning-button variant="brand" label="Create" onclick={handleCreateClick}></lightning-button>
+                    <lightning-button variant="neutral" label="Reset" onclick={handleResetClick}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

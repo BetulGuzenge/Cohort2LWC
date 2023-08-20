@@ -1,0 +1,18 @@
+<template>
+    <lightning-card  title="Trainers" icon-name="custom:custom40">
+        <div class="slds-p-horizontal_small">
+            <lightning-combobox
+                label="Trainers"
+                value={trainerValue}
+                options={trainerOptions}
+                onchange={handleTrainerChange}>
+            </lightning-combobox><br>
+        </div>
+        <div class="slds-p-horizontal_small">
+            <lightning-button variant="brand" 
+                            label="Select" 
+                            onclick={handleSelectClick}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

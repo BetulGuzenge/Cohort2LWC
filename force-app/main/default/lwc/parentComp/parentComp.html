@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Parent Comp" icon-name="custom:custom11">
+        <div class="slds-p-horizontal_small">
+            <p> Child Button Clicked: {count} </p>
+        </div>
+        <div class="slds-p-horizontal_small">
+            <c-child-comp onbuttonclick={handleChildButtonClick}></c-child-comp>// mustuseon before giving a nane
+        </div>
+    </lightning-card>
+</template>

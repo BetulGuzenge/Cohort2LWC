@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Parent Hello" icon-name="custom:custom10">
+        <div class="slds-p-horizontal_small">
+            <template if:true={name}>
+                <!-- conditional rendering -->
+                <p> Hello {name} </p>
+            </template>
+            <template if:false={name}>
+                <p style="color:red;"> Please type a name in child and then click Say Hello! </p>
+            </template>
+        </div>
+        <div class="slds-p-horizontal_small">
+            <c-child-hello onhello={handleHello}></c-child-hello>
+        </div>
+    </lightning-card>
+</template>

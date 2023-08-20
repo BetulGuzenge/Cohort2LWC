@@ -1,0 +1,38 @@
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="3" padding="around-small">
+            <lightning-input type="text" 
+                            variant="standard" 
+                            label="First Name" 
+                            value={firstName}
+                            onchange={handleFirstNameChange}
+                            disabled={disableFirstName}>
+            </lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="3" padding="around-small">
+            <lightning-input type="text" 
+                            variant="standard" 
+                            label="Last Name"
+                            value={lastName} 
+                            onchange={handleLastNameChange} 
+                            required
+                            disabled={disableLastName}>
+            </lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="3" padding="around-small">
+            <lightning-input type="tel" 
+                            label="Phone" 
+                            value={phone}
+                            required
+                            onchange={handlePhoneChange}
+                            disabled={disablePhone}>
+            </lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="3" padding="around-small" class="slds-m-top_large">
+            <lightning-button variant="success" 
+                            label="Save" 
+                            onclick={handleSaveClick}>
+            </lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

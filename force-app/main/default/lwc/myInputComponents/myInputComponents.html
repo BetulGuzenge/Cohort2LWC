@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Input Components" icon-name="custom:custom12">
+        <div class="slds-p-horizontal_small">
+            <lightning-input type="text" 
+                            variant="label-stacked" 
+                            label="Enter first Name" 
+                            placeholder="For example: John"
+                            value={firstName}
+                            required
+                            message-when-value-missing="First name is required field!"
+                            onchange={handleFirstNameChange}>
+                            <!-- To make the communication in both ways(from js to html and from html to js we have to add a handler to change the value whenever the value is changed in UI it needs to reflect) -->
+            </lightning-input>
+        </div><br>
+        <div class="slds-p-horizontal_small">
+            <lightning-input type="date" 
+                            variant="standard" 
+                            label="Date of Birth"
+                            onchange={handleDateOfBirthChange}
+                            value={dob}
+                            min={dobMin}
+                            max={dobMax}>
+            </lightning-input>
+        </div><br>
+        <div class="slds-p-horizontal_small">
+            <lightning-input type="datetime" 
+                            variant="standard" 
+                            label="Date of Appointment"
+                            onchange={handleDateOfAppointmentChange}
+                            value={doa}>
+            </lightning-input>
+        </div><br>
+        <div class="slds-p-horizontal_small">
+            <lightning-input type="number" 
+                            variant="standard" 
+                            label="Salary"
+                            formatter="currency"
+                            onchange={handleSalaryChange}
+                            value={salary}>
+            </lightning-input>
+        </div><br>
+        <div class="slds-p-horizontal_small">
+            <lightning-button variant="neutral" 
+                              label="Show" 
+                              onclick={handleClick}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Subjects & Trainers" icon-name="custom:custom30">
+        <div class="slds-p-horizontal_small">
+            <lightning-combobox
+                label="Subjects:"
+                value={subjectValue}
+                options={subjectOptions}
+                onchange={handleSubjectChange}>
+            </lightning-combobox>
+        </div>
+        <div class="slds-p-horizontal_small">
+            <p> {message} </p>
+        </div>
+        <div class="slds-p-horizontal_small">
+            <template if:true={subjectValue}>
+                <c-child-trainers selected-subject={subjectValue} ontrainerselected={handleTrainerSelect}></c-child-trainers>
+            </template>
+        </div>
+    </lightning-card>
+</template>

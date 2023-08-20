@@ -1,0 +1,22 @@
+<template>
+    <lightning-card  title="Opportunity Record" icon-name="custom:custom12">
+        
+        <div class="slds-p-horizontal_samll">
+            <ul>
+                <template if:true={opportunityRecord}>
+
+                    <li>Record Id: {opportunityRecord.Id}</li>
+                    <li>Opportunity Name: {opportunityRecord.Name}</li>
+                    <li>Close Date : {opportunityRecord.CloseDate}</li>
+                    <li>Lead Source: {opportunityRecord.LeadSource}</li>
+                    <li>Expexted Revenue: {opportunityRecord.ExpectedRevenue}</li>
+
+                </template>
+                
+
+            </ul>
+
+        </div>
+    </lightning-card>
+    
+</template>

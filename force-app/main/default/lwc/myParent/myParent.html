@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="My Parent" icon-name="custom:custom12">
+        <div class="slds-p-horizontal_small">
+            <lightning-button label="Change" onclick={handleClick}></lightning-button>
+            <c-my-child child-name="My Custom Child LWC"></c-my-child>
+            <!-- Here ' MY Custom Child LWC' is what we name our child LWC(it is added as an attribute with kebab case) --> 
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Account Details" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" padding="around-small">
+                    <lightning-input type="text" label="Enter Account Type" onchange={handleTypeChange}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <lightning-button variant="brand-outline" 
+                                    icon-name="utility:switch"
+                                    icon-position="right"  
+                                    label="Fetch"  
+                                    onclick={handleClick}>
+                    </lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <template if:true={accountRecords} for:each={accountRecords} for:item="account">  
+                        <!-- template if:true= is the tag to use conditional rendering . //{accountRecords} is trackable variable that we created in js  -->
+                        <p key={account.Id}> 
+                            <!-- when we use paragraph or list item ... inside of a template we have to provide a key  -->
+                            <!-- this key element will help to recognize this paragraph . we can have more than one element inside of the template  -->
+                            <!-- We can define this key with any logical thing. It doesn't have to be id all the time  -->
+                            Account Id: <a href={account.Link} target="_blank">{account.Id}</a> <br /> 
+                            <!-- Here we add accid as a link . Wecan also add as we have done below for other fields  -->
+                            <!-- We have to use a attribute to provide the href tag for a link  -->
+                            <!-- we place the link as account id so we add {account.Id} -->
+                            This 
+                            Account Name: <b>{account.Name}</b> <br />
+                            Account Number: <b>{account.AccountNumber}</b> <br />
+                            Account Phone: <b>{account.Phone}</b> <br />
+                            Annual Revenue: <b>{account.AnnualRevenue}</b> <br />
+                            Account Type: <b>{account.Type}</b> <br />
+                            ---------------
+                        </p>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template> 

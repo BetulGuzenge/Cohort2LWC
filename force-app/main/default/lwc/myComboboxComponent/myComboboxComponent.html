@@ -1,0 +1,28 @@
+<template>
+    <lightning-card  title="My Combobox Component" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <lightning-combobox
+                label="Status"
+                dropdown-alignment="auto"
+                value={value}
+                options={options}
+                onchange={handleChange}
+                field-level-help="Choose options from the given option!"
+                spinner-active={showSpinner}>
+            </lightning-combobox>
+        </div>
+        <div class="slds-p-horizontal_small">
+            <lightning-input-address
+                address-label="Mailing Address"
+                street-label="Street"
+                city-label="City"
+                country-label="Country"
+                province-label="State"
+                postal-code-label="Zip Code"
+                required
+                field-level-help="Help Text for inputAddress field"
+                onchange={handleOnChange}>
+            </lightning-input-address>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,25 @@
+<template>
+    <lightning-card icon-name="custom:custom11" title="LWC 1">
+      <div class="slds-m-around_small">
+        <lightning-combobox
+            label="Choose Component"
+            value={componentValue}
+            options={componentOptions}
+            onchange={handleComponentChange}>
+        </lightning-combobox>
+        <br>
+        <lightning-input 
+            type="text" 
+            variant="standard" 
+            label="Message"
+            onchange={handleMessageChange}>
+        </lightning-input>
+        <br>
+        <lightning-button 
+            variant="brand" 
+            label="Send" 
+            onclick={handleSendClick}>
+        </lightning-button>
+      </div>
+    </lightning-card>
+</template>

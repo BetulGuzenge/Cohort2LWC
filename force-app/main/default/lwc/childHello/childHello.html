@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Child Hello" icon-name="custom:custom20">
+        <div class="slds-p-horizontal_small">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" padding="around-small">
+                    <lightning-input type="text" label="Enter name:" onchange={handleNameChange}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <lightning-button variant="success" label="Say Hello" onclick={handleHelloClick}></lightning-button>
+                </lightning-layout-item>                
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

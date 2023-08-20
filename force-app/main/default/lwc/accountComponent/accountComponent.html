@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Account" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" padding="around-small">
+                    <c-account-create-form onaccountcreated={handleAccountCreated}></c-account-create-form>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <c-account-data-table></c-account-data-table>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,32 @@
+<template>
+    <div class="slds-p-horizontal_small" style="background-color:lightgray">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-input 
+                    type="text" 
+                    variant="standard"
+                    label="Last Name" 
+                    required="true"
+                    value={lastName}
+                    onchange={handleLastNameChange}
+                    disabled={disableLastName}>
+                </lightning-input>    
+            </lightning-layout-item>
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-input 
+                    type="tel" 
+                    variant="standard"
+                    label="Phone Number"
+                    required="true"
+                    value={phoneNumber}
+                    onchange={handlePhoneNumberChange}
+                    disabled={disablePhoneNumber}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="4" padding="around-small" style="margin-top: 25px;">
+                <lightning-button variant="success" label="Save" onclick={handleSaveClick} disabled={disableSave}></lightning-button>
+                <lightning-button variant="neutral" label="Reset" onclick={handleResetClick} disabled={disableReset}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

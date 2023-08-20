@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Account Record" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <ul>
+                <template if:true={accountRecord.data}>
+                    <li>Record Id: {accountRecord.data.fields.Id.value}</li>
+                    <li>Account Name: {accountRecord.data.fields.Name.value}</li>
+                    <li>Account Number: {accountRecord.data.fields.AccountNumber.value}</li>
+                    <li>Account Website: {accountRecord.data.fields.Website.value}</li>
+                    <li>Annual Revenue: {accountRecord.data.fields.AnnualRevenue.value}</li>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+</template>
+
+
+<!-- ******************************** -->
+
+<!-- SECOND VERSION OF HTML  ===> ENTIRE HTML
+<template>
+    <lightning-card title="Account Record" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <ul>
+                <template if:true={accountRecord}>
+                    <li>Record Id: {accountRecord.Id}</li>
+                    <li>Account Name: {accountRecord.Name}</li>
+                    <li>Account Number: {accountRecord.AccountNumber}</li>
+                    <li>Account Website: {accountRecord.Website}</li>
+                    <li>Annual Revenue: {accountRecord.AnnualRevenue}</li>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+</template> -->
